@@ -12,6 +12,7 @@
     <!--引入的项目-->
     <modules>
         <module>BeierEureka</module>
+        <module>BeierProvider</module>
     </modules>
 
     <!-- 使用最新的spring-boot版本 -->

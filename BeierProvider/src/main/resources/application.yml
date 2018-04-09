@@ -1,0 +1,27 @@
+server:
+  port: 8000                    # 指定该Eureka客户端（同时是服务提供者）的端口
+spring:
+  application:
+    name: beier-provider
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:                        # 指定数据源
+    platform: h2                     # 指定数据源类型
+    schema: classpath:h2/schema.sql  # 指定h2数据库的建表脚本（即表结构）
+    data: classpath:h2/data.sql      # 指定h2数据库的insert脚本（即表内容）
+logging:
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+    com.itmuch.youran.persistence: ERROR
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/    # 指定注册中心的地址
+  instance:
+    preferIpAddress: false                          #当应用程序向eureka注册时，它将使用其主机名而不是其IP地址
