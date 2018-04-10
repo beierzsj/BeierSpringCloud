@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: beier-api-zuul
+server:
+  port: 8050
+eureka:
+  instance:
+    hostname: gateway
+  client:
+    serviceUrl:
+      defaultZone: http://discovery:8761/eureka/
+zuul:
+#  ignored-services: beier-provider                                   # 需要忽视的服务(配置后将不会被路由)
+  routes:
+    provider:                                                        # provider是随便写的，在zuul上面唯一即可；当这里的值 = service-id 时，service-id可以不写。
+      path: /provider/**                                              # 想要映射到的路径
+      service-id: beier-provider     # Eureka中的serviceId
+    comsumer:                                                        # comsumer是随便写的
+      path: /comsumer/**
+      service-id: beier-comsumer     # Eureka中的serviceId
