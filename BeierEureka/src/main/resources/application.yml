@@ -11,5 +11,11 @@ eureka:
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+#security: #开启安全校验
+#  basic:
+#    enabled: true
+#  user:  #表示eureka的帐号/密码 为user/password123
+#    name: root
+#    password: 123456
 
 # 参考文档：http://projects.spring.io/spring-cloud/docs/1.0.3/spring-cloud.html#_standalone_mode
