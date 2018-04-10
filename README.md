@@ -1,6 +1,6 @@
 # 项目简介
 
-Spring Cloud章节的配套代码，如有疑问，请移步至该地址。
+Spring Cloud的脚手架的基础项目，主要提供搭建好的最简便SpringCloud框架整合。
 
 内容主要包含：
 
