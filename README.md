@@ -25,11 +25,7 @@ Spring Cloud章节的配套代码，如有疑问，请移步至该地址。
 | IDE   | STS 或者 IntelliJ IDEA |
 | Maven | 3.x                  |
 
-## 主机名配置：
 
-| 主机名配置（C:\Windows\System32\drivers\etc\hosts文件） |
-| ---------------------------------------- |
-| 127.0.0.1 discovery config-server gateway movie user feign ribbon |
 
 ## 主机规划：
 
@@ -44,3 +40,11 @@ Spring Cloud章节的配套代码，如有疑问，请移步至该地址。
 | beier-hystrix-turbine             | 8031 | turbine                | /turbine.stream |
 
 
+## 项目的启动顺序：
+ | 项目    | 启动java                          | 描述 |
+ | ---------- | ------- |----- |
+ | BeierEureka   |  EurekaApp                  | 注册中心     |
+ | BeierConfigServer   | ConfigServerApp       |  配置服务          |
+ | BeierProvider | ProviderApp                 |     服务提供者       |
+ | BeierConsumer | ConsumerApp                 |   服务消费者   |
+ | BeierApiZuul | ApiZuulApp                   |    服务api网关   |
