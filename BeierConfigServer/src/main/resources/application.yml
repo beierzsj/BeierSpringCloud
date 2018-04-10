@@ -1,0 +1,17 @@
+server:
+  port: 8040
+spring:
+  application:
+    name: beier-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/djying/BeierConfig/  #git的目录
+          search-paths: testConfig                   #找哪个目录
+          username:
+          password:
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

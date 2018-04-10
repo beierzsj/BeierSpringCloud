@@ -3,8 +3,10 @@ package com.beier.Controller;
 import com.beier.model.User;
 import com.beier.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @create 2018/4/9.
  */
 @RestController
+@RefreshScope  //这边的@RefreshScope注解不能少，否则即使调用/refresh，配置也不会刷新 ，即使用命令 curl  -X POST http://localhost:8000/refresh
 public class UserController {
     @Autowired
     private UserRepository userRepository;
@@ -39,4 +42,15 @@ public class UserController {
         return this.userRepository.findOne(id);
     }
 
+    /**
+     * 拿去自配置服务的配置，根据https://gitee.com/djying/BeierConfig 对应配置拿取
+     * 刷新命令：curl  -X POST http://localhost:8000/refresh
+     */
+    @Value("${test}")
+    private String test;
+
+    @GetMapping("/test")
+    public String hello() {
+        return this.test;
+    }
 }

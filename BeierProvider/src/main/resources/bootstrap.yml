@@ -1,0 +1,21 @@
+#配置服务 客户端
+spring:
+  cloud:   #取自 配置服务
+    config:
+      profile: dev  #配置的自定义环境名
+      label: master #配置所在分支名
+      #uri: http://localhost:8040/                     #1、通过寻找主机地址 查找配置服务
+      discovery:                                      #2、通过服务发现 查找配置服务
+        enabled: true                                 # 默认false，设为true表示使用注册中心中的configserver配置而不自己配置configserver的uri
+        serviceId: beier-config-server               # 指定config server（配置服务）在服务发现中的serviceId，默认为：configserver
+
+ # 获取git上的资源信息遵循如下规则：
+ # /{application}/{profile}[/{label}]
+ # /{application}-{profile}.yml
+ # /{label}/{application}-{profile}.yml
+ # /{application}-{profile}.properties
+ # /{label}/{application}-{profile}.properties
+
+  # 例如本例：可使用以下路径来访问beier-provider-dev.properties：
+  # http://localhost:8040/beier-provider-dev.properties
+  # http://localhost:8040/beier-provider-client/dev

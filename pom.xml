@@ -14,7 +14,8 @@
         <module>BeierEureka</module>
         <module>BeierProvider</module>
         <module>BeierConsumer</module>
-        <module>beierApiZuul</module>
+        <module>BeierApiZuul</module>
+        <module>BeierConfigServer</module>
     </modules>
 
     <!-- 使用最新的spring-boot版本 -->
