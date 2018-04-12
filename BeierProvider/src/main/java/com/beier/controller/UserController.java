@@ -1,7 +1,9 @@
-package com.beier.Controller;
+package com.beier.controller;
 
 import com.beier.model.User;
 import com.beier.repository.UserRepository;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RefreshScope  //这边的@RefreshScope注解不能少，否则即使调用/refresh，配置也不会刷新 ，即使用命令 curl  -X POST http://localhost:8000/refresh
+@Api(description="用户接口")//swagger配置类描述
 public class UserController {
     @Autowired
     private UserRepository userRepository;
@@ -32,12 +35,14 @@ public class UserController {
      */
 
     @GetMapping("/instance-info")
+    @ApiOperation(value="服务器信息", notes="详细注释")
     public ServiceInstance showInfo() {
         ServiceInstance localServiceInstance = this.discoveryClient.getLocalServiceInstance();
         return localServiceInstance;
     }
 
     @GetMapping("/simple/{id}")
+    @ApiOperation(value="根据id查询用户信息", notes="详细注释")
     public User findById(@PathVariable Long id) {
         return this.userRepository.findOne(id);
     }
@@ -50,6 +55,7 @@ public class UserController {
     private String test;
 
     @GetMapping("/test")
+    @ApiOperation(value="测试配置服务", notes="详细注释")
     public String hello() {
         return this.test;
     }

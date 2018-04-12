@@ -25,3 +25,4 @@ eureka:
       defaultZone: http://localhost:8761/eureka/    # 指定注册中心的地址
   instance:
     preferIpAddress: false                          #当应用程序向eureka注册时，它将使用其主机名而不是其IP地址
+    status-page-url: http://localhost:${server.port}/swagger-ui.html # Eureka页面点击服务跳转到swagger接口文档

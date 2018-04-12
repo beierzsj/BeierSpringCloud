@@ -17,8 +17,8 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  * /{label}/{application}-{profile}.properties
  *
  * 例如本例的服务提供者：可使用以下路径来访问beier-provider-dev.properties：
- * http://localhost:8040/beier-consumer-dev.properties
- * http://localhost:8040/beier-consumer/dev
+ * http://localhost:8040/beier-provider-dev.properties
+ * http://localhost:8040/beier-provider/dev
  * ...
  * @author hua
  * @create 2018/4/10.

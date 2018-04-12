@@ -4,7 +4,7 @@ spring:
     config:
       profile: dev  #配置的自定义环境名
       label: master #配置所在分支名
-      #uri: http://localhost:8040/                     #1、通过寻找主机地址 查找配置服务
+      uri: http://localhost:8040/                     #1、通过寻找主机地址 查找配置服务
       discovery:                                      #2、通过服务发现 查找配置服务
         enabled: true                                 # 默认false，设为true表示使用注册中心中的configserver配置而不自己配置configserver的uri
         serviceId: beier-config-server               # 指定config server（配置服务）在服务发现中的serviceId，默认为：configserver

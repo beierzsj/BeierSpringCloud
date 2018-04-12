@@ -1,6 +1,6 @@
 # 项目简介
 
-Spring Cloud的脚手架的基础项目，主要提供搭建好的最简便SpringCloud框架整合。
+Spring Cloud的脚手架的基础项目，主要提供搭建好的简便SpringCloud框架整合，融合eureka,feign,rabbion,hystrix,zuul,swagger等等。
 
 内容主要包含：
 
