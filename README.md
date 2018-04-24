@@ -1,6 +1,9 @@
 # 项目简介
 
 Spring Cloud的脚手架的基础项目，主要提供搭建好的简便SpringCloud框架整合，融合eureka,feign,rabbion,hystrix,zuul,swagger等等。
+项目路径：
+GitHub：https://github.com/beierzsj/BeierSpringCloud
+OsChina：https://gitee.com/djying/BeierSpringCloud
 
 内容主要包含：
 
